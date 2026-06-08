@@ -13,7 +13,6 @@ import {
   Sparkles,
   Trophy
 } from "lucide-react";
-import { LocationFinder } from "./components/LocationFinder";
 
 const facebookUrl = "https://www.facebook.com/profile.php?id=61578127423240";
 const mapUrl =
@@ -26,7 +25,7 @@ const navItems = [
   ["Events", "#events"],
   ["Hours", "#hours"],
   ["Cards", "#cards"],
-  ["Find Store", "#locations"]
+  ["Location", "#location"]
 ];
 
 const games = [
@@ -182,7 +181,7 @@ export default function Home() {
         </div>
         <div>
           <MapPin aria-hidden="true" />
-          <span>Find the nearest Golden Lair location</span>
+          <span>1807 W Genesee St, Lapeer, MI</span>
         </div>
         <div>
           <Phone aria-hidden="true" />
@@ -291,19 +290,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section location-section" id="locations">
+      <section className="section location-section" id="location">
         <div className="location-copy">
           <p className="eyebrow">Visit us</p>
-          <h2>Choose the Golden Lair closest to you.</h2>
+          <h2>1807 W Genesee St, Lapeer, MI 48446</h2>
           <p>
-            Use the finder to compare locations, get directions, and check store
-            details before game night. The second location is wired in and ready
-            for the exact address.
+            Stop in for sealed product, accessories, weekly events, or a casual
+            game night. Check Facebook for the latest announcements before big
+            prerelease weekends.
           </p>
           <div className="location-actions">
             <a className="button primary" href={mapUrl} target="_blank">
               <MapPin aria-hidden="true" />
-              Lapeer directions
+              Directions
             </a>
             <a className="button secondary" href={phoneUrl}>
               <Phone aria-hidden="true" />
@@ -311,7 +310,12 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <LocationFinder />
+        <div className="map-card" aria-label="Golden Lair Games location">
+          <MapPin aria-hidden="true" />
+          <strong>Golden Lair Games</strong>
+          <span>1807 W Genesee St</span>
+          <span>Lapeer, MI 48446</span>
+        </div>
       </section>
 
       <footer className="site-footer">

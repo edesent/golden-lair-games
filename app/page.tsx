@@ -307,9 +307,9 @@ export default function Home() {
               <li key={step}>{step}</li>
             ))}
           </ol>
-          <a className="button primary" href={phoneUrl}>
-            <Phone aria-hidden="true" />
-            Call before you visit
+          <a className="button primary" href="#locations">
+            <MapPin aria-hidden="true" />
+            Bring your cards in
           </a>
         </div>
       </section>

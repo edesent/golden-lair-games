@@ -17,4 +17,4 @@ npm run build
 
 GitHub: https://github.com/edesent/golden-lair-games
 
-Vercel: https://golden-lair-games.vercel.app
+Vercel: https://goldenlairgames.vercel.app

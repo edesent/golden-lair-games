@@ -13,6 +13,7 @@ import {
   Sparkles,
   Trophy
 } from "lucide-react";
+import { LocationFinder } from "./components/LocationFinder";
 
 const facebookUrl = "https://www.facebook.com/profile.php?id=61578127423240";
 const mapUrl =
@@ -25,7 +26,7 @@ const navItems = [
   ["Events", "#events"],
   ["Hours", "#hours"],
   ["Cards", "#cards"],
-  ["Location", "#location"]
+  ["Find Store", "#locations"]
 ];
 
 const games = [
@@ -146,14 +147,6 @@ export default function Home() {
           />
         </div>
         <div className="hero-content">
-          <Image
-            className="hero-logo"
-            src="/images/golden-lair-logo.png"
-            alt=""
-            width={220}
-            height={147}
-            priority
-          />
           <p className="eyebrow">Collectible trading card store and play center</p>
           <h1>Golden Lair Games</h1>
           <p className="hero-copy">
@@ -172,6 +165,14 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <Image
+          className="hero-logo"
+          src="/images/golden-lair-logo.png"
+          alt=""
+          width={420}
+          height={280}
+          priority
+        />
       </section>
 
       <section className="quick-info" aria-label="Store highlights">
@@ -181,7 +182,7 @@ export default function Home() {
         </div>
         <div>
           <MapPin aria-hidden="true" />
-          <span>1807 W Genesee St, Lapeer, MI</span>
+          <span>Find the nearest Golden Lair location</span>
         </div>
         <div>
           <Phone aria-hidden="true" />
@@ -207,6 +208,33 @@ export default function Home() {
           {games.map((game) => (
             <span key={game}>{game}</span>
           ))}
+        </div>
+      </section>
+
+      <section className="section gallery-section" aria-label="Store photos">
+        <div className="section-heading">
+          <p className="eyebrow">Now open in Grand Blanc</p>
+          <h2>A second Golden Lair, ready for play.</h2>
+        </div>
+        <div className="gallery-grid">
+          <figure className="gallery-item">
+            <Image
+              src="/images/grand-blanc-sign.jpg"
+              alt="Golden Lair Games storefront sign at the Grand Blanc location"
+              width={2048}
+              height={1536}
+            />
+            <figcaption>The new Grand Blanc storefront on Dort Hwy.</figcaption>
+          </figure>
+          <figure className="gallery-item">
+            <Image
+              src="/images/store-interior.jpg"
+              alt="Inside Golden Lair Games with trading cards and products for sale"
+              width={2048}
+              height={1536}
+            />
+            <figcaption>Cards, sealed product, and accessories in store.</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -290,19 +318,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section location-section" id="location">
+      <section className="section location-section" id="locations">
         <div className="location-copy">
           <p className="eyebrow">Visit us</p>
-          <h2>1807 W Genesee St, Lapeer, MI 48446</h2>
+          <h2>Choose the Golden Lair closest to you.</h2>
           <p>
-            Stop in for sealed product, accessories, weekly events, or a casual
-            game night. Check Facebook for the latest announcements before big
-            prerelease weekends.
+            Use the finder to compare locations, get directions, and check store
+            details before game night. The second location is wired in and ready
+            for the exact address.
           </p>
           <div className="location-actions">
             <a className="button primary" href={mapUrl} target="_blank">
               <MapPin aria-hidden="true" />
-              Directions
+              Lapeer directions
             </a>
             <a className="button secondary" href={phoneUrl}>
               <Phone aria-hidden="true" />
@@ -310,12 +338,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="map-card" aria-label="Golden Lair Games location">
-          <MapPin aria-hidden="true" />
-          <strong>Golden Lair Games</strong>
-          <span>1807 W Genesee St</span>
-          <span>Lapeer, MI 48446</span>
-        </div>
+        <LocationFinder />
       </section>
 
       <footer className="site-footer">

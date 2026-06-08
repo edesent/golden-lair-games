@@ -13,7 +13,9 @@ import {
   Sparkles,
   Trophy
 } from "lucide-react";
+import Link from "next/link";
 import { LocationFinder } from "./components/LocationFinder";
+import { games as gameProducts } from "./games/games-data";
 
 const facebookUrl = "https://www.facebook.com/profile.php?id=61578127423240";
 const mapUrl =
@@ -23,19 +25,11 @@ const githubUrl = "https://github.com/edesent/golden-lair-games";
 const vercelUrl = "https://goldenlairgames.vercel.app";
 
 const navItems = [
+  ["Games", "/games"],
   ["Events", "#events"],
   ["Hours", "#hours"],
   ["Cards", "#cards"],
   ["Find Store", "#locations"]
-];
-
-const games = [
-  "Magic: The Gathering",
-  "Pokemon",
-  "Lorcana",
-  "Riftbound",
-  "Flesh and Blood",
-  "Dungeons & Dragons"
 ];
 
 const schedule = [
@@ -205,8 +199,10 @@ export default function Home() {
           ))}
         </div>
         <div className="game-strip" aria-label="Supported games">
-          {games.map((game) => (
-            <span key={game}>{game}</span>
+          {gameProducts.map((game) => (
+            <Link key={game.slug} href={`/games/${game.slug}`}>
+              {game.name}
+            </Link>
           ))}
         </div>
       </section>

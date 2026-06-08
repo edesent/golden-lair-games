@@ -319,9 +319,8 @@ export default function Home() {
           <p className="eyebrow">Visit us</p>
           <h2>Choose the Golden Lair closest to you.</h2>
           <p>
-            Use the finder to compare locations, get directions, and check store
-            details before game night. The second location is wired in and ready
-            for the exact address.
+            Use the finder to compare our Lapeer and Grand Blanc stores, get
+            directions, and check store details before game night.
           </p>
           <div className="location-actions">
             <a className="button primary" href={mapUrl} target="_blank">
